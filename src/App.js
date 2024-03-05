@@ -11,6 +11,8 @@ function App() {
   // below is letter coordinates 
   const [currAttempt, setCurrAttempt] = useState({attempt:0,letterPos:0,})
   const [wordSet, setWordSet] = useState(new Set())
+  // wrong letters
+  const [disabledLetters,setDisabledLetters] = useState([])
 
   const correctWord = "RIGHT"
   useEffect(()=>{
@@ -71,7 +73,7 @@ function App() {
       <nav>
         <h1>Wordle</h1>
       </nav>
-      <AppContext.Provider value={{board, setBoard, currAttempt,setCurrAttempt, onDelete,onEnter,onSelectLetter, correctWord}}>
+      <AppContext.Provider value={{board, setBoard, currAttempt,setCurrAttempt, onDelete,onEnter,onSelectLetter, correctWord, disabledLetters,setDisabledLetters, }}>
         <div className='game'>
 
         <Board />
