@@ -19,17 +19,17 @@ function Keyboard() {
       // need to use forEach to determine 
       // can we just do onSelectLetter passing in event.key?
       keys1.forEach(key => {
-        if (event.key === key){
+        if (event.key.toUpperCase() === key.toUpperCase()){
           onSelectLetter(key)
         }
       })
       keys2.forEach(key => {
-        if (event.key === key){
+        if (event.key.toUpperCase() === key.toUpperCase()){
           onSelectLetter(key)
         }
       })
       keys3.forEach(key => {
-        if (event.key === key){
+        if (event.key.toUpperCase() === key.toUpperCase()){
           onSelectLetter(key)
         }
       })
