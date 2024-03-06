@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import { AppContext } from '../App'
 
 function GameOver() {
-    const {gameOver, setGameOver, currAttempt, correctWord} = useContext(AppContext)
+    const {gameOver, currAttempt, correctWord} = useContext(AppContext)
   return (
-    <div className='gameOver'>
-        <h3>
-            {gameOver.guessedWord? "You got it chief": "Better luck next time"}
-            <h1>Correct: {correctWord} </h1>
-            {gameOver.guessedWord && (<h3> You guessed it in {currAttempt.attempt} tries </h3>)}
-        </h3>
+    <div className='gameOver' id = {gameOver.guessedWord ? "correct-guess" : "wrong-guess" } >
+        <div>
+            <h2>{gameOver.guessedWord? "You got it chief!": "Better luck next time... "}</h2>
+            <h1>Correct Word: {correctWord.toUpperCase()} </h1>
+            {gameOver.guessedWord && (<h2> You guessed it in {currAttempt.attempt} tries </h2>)}
+        </div>
     </div>
   )
 }
